@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minLength: 3,
-    maxLength: 40,
+    maxLength: 255,
   },
   cryptoUrl: {
     type: String,
