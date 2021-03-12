@@ -42,7 +42,7 @@ exports.reset_post = async (req, res) => {
       from: process.env.USERMAIL,
       to: user.email,
       subject: 'Reset your password',
-      html: `<h4>Please follow this <a href="https://mongo-db-webshop.herokuapp.com/reset/${user.cryptoUrl}">Link</a> to reset password</h4>`,
+      html: `<h4>Please follow this <a href="http://localhost:3000/reset/${user.cryptoUrl}">Link</a> to reset password</h4>`,
     });
 
     res.render('reset.ejs', {
