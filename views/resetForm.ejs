@@ -1,0 +1,17 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+<!--  /HEADER -->
+
+<form action="/resetPasswordForm" method="post">
+
+  <input type="password" name="password" id="" placeholder="new password">
+  <input type="password" name="confirmPassword" id="" placeholder="confirm password">
+  <input type="email" name="email" value="<%=email%>" hidden>
+  <button type="submit">Reset</button>
+
+  <%- include("message")%>
+</form>
+
+<!--  FOOTER -->
+<%- include('include/_footer') %>
+<!--  /FOOTER -->
