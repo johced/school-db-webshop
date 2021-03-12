@@ -17,6 +17,9 @@ exports.register_post = async (req, res) => {
   try {
     if (req.body.email == '' || req.body.name == '' || req.body.password == '') {
       return res.render('register.ejs', { message: 'Please fill in all the fields' });
+    }
+    if (userMail || userName) {
+      res.render('register.ejs', { message: 'Email or Username already exists' });
     } else {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
