@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/johced/school-db-webshop#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",

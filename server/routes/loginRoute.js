@@ -10,7 +10,7 @@ route.get('/', homeController.showStart);
 
 // *** Register ***
 route.get('/register', registerController.register_get);
-// route.post('/register', registerController.register_post)
+route.post('/register', registerController.register_post);
 
 // *** Export ***
 module.exports = route;
