@@ -43,6 +43,7 @@ app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 
 // *** Load routers ***
 app.use('/', require('./server/routes/loginRoute'));
+app.use('/', require('./server/routes/productRoute'));
 
 // *** Create Local Server ***
 app.listen(PORT, () => {
