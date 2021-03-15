@@ -80,3 +80,23 @@ exports.editAdminProduct_get = async (req, res) => {
     console.log(err);
   }
 };
+exports.editAdminProduct_post = async (req, res) => {
+  try {
+    const { title, description, price } = req.body;
+    await Product.updateOne(
+      { _id: req.params.id },
+      {
+        title: title,
+        img: {
+          data: fs.readFileSync(path.join('uploads/' + req.file.filename)),
+          contentType: 'image',
+        },
+        description: description,
+        price: price,
+      }
+    );
+    res.redirect('/addProduct');
+  } catch (err) {
+    console.log(err);
+  }
+};

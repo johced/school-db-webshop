@@ -45,5 +45,9 @@ route.post('/addProduct', verifyAdmin, verifyUser, upload.single('image'), produ
 
 route.get('/addProduct/delete/:id', verifyAdmin, verifyUser, productController.deleteAdminProduct_get);
 
+//Edit product
+route.get('/addProduct/edit/:id', verifyAdmin, verifyUser, productController.editAdminProduct_get);
+route.post('/addProduct/edit/:id', verifyAdmin, verifyUser, upload.single('image'), productController.editAdminProduct_post);
+
 // *** export ***
 module.exports = route;
