@@ -67,3 +67,36 @@ exports.deleteAdminProduct_get = async (req, res) => {
     console.log(err);
   }
 };
+exports.editAdminProduct_get = async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const user = await User.findOne({ _id: req.user.userDB._id }).populate('poductList');
+    res.render('editProduct.ejs', {
+      products: user.productList,
+      user: req.user.userDB,
+      productId: productId,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+exports.editAdminProduct_post = async (req, res) => {
+  const { title, description, price } = req.body;
+  try {
+    await Product.updateOne(
+      { _id: req.params.id },
+      {
+        title: title,
+        img: {
+          data: fs.readFileSync(path.join('uploads/' + req.file.filename)),
+          contentType: 'image',
+        },
+        description: description,
+        price: price,
+      }
+    );
+    res.redirect('/addProduct');
+  } catch (err) {
+    console.log(err);
+  }
+};
