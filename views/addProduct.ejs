@@ -1,0 +1,48 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+<!--  /HEADER -->
+<a href="/userStart">Back to Start</a>
+<div class="add-form">
+  
+  <form action="/addProduct" method="POST" enctype="multipart/form-data">
+    <input type="text" name="title" id="" placeholder="product name" required />
+    <input type="file" name="image" id="image" value="" required>
+    <input type="text" name="description" id="" placeholder="product description" required />
+    <input type="number" name="price" id="" placeholder="product price" required />
+    <button type="submit">Add</button>
+    <%- include("message") %>
+  </form>
+</div>
+ 
+
+  <% products.forEach(product=>{%>
+    <div class="products-container">
+      <ul>
+        <li class="products-li">
+          <div class="products-content">
+            <span>
+              <h3>Title:</h3>
+              <%=product.title%>
+            </span>
+            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt=""
+              class="item_img" />
+          </div>
+          <span>
+            <h4>Description:</h4>
+            <%=product.description%>
+          </span>
+          <span>
+            <h4>Price:</h4>
+            <%=product.price%>
+          </span>
+    </div>
+    </li>
+    <a href="/addProduct/edit/<%= product.id %>" class="products-a-edit">Edit</a><a
+      href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>
+    </ul>
+    </div>
+    <%})%>
+
+<!--  FOOTER -->
+<%- include('include/_footer') %>
+<!--  /FOOTER -->
