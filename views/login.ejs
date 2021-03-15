@@ -3,18 +3,17 @@
 <!-- /HEADER -->
 
 <div class="login-container">
-    <form action="/login" method="post">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <button type="submit">Login</button>
+    <form action="/login" method="POST">
+      <input type="email" name="email" id="" placeholder="Email" />
+      <input type="password" name="password" id="" placeholder="Password" />
+      <button type="submit">Login</button>
+      
     </form>
-</div>
-
-<%- include("message") %>
-<p>Forgot Password? <a href="/reset">Reset</a></p>
-  
-<a href="/">Back to Start</a>
-</div>
+    <%- include("message") %>
+    <p>Forgot Password? <a href="/reset">Reset</a></p>
+      
+    <a href="/">Back to Start</a>
+    </div>
 
 <!-- FOOTER -->
 <%- include('include/_footer') %>

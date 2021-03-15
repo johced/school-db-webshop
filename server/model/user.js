@@ -27,7 +27,19 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
   },
+  productList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'product',
+    },
+  ],
 });
+
+userSchema.methods.addProduct = async function (productId) {
+  this.productList.push(productId);
+  await this.save();
+};
+
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;

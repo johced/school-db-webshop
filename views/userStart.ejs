@@ -1,5 +1,5 @@
 <!--  HEADER -->
-<%- include('include/_header') %>
+<%- include("include/_header") %>
 <!--  /HEADER -->
 
   <div class="start-header">
@@ -9,14 +9,17 @@
     </div>
 
     <div class="start-header-links">
+        <% if (user.role) { %>
+            <a href="/addProduct">Add Product</a>
+        <% } %>
       <a href="/logout">Logout</a>
     </div>
 </div>
           <%- include("message") %>
 
 <!-- Show products grid -->
-<%- include('include/_products') %>
+<%- include("include/_products") %>
            
 <!--  FOOTER -->
-<%- include('include/_footer') %>
+<%- include("include/_footer") %>
 <!--  /FOOTER -->

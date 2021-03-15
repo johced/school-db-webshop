@@ -1,10 +1,16 @@
 const Product = require('../model/product');
 
 exports.showStart = async (req, res) => {
-  const products = await Product.find();
-  res.render('index.ejs', {
-    products,
-  });
+  try {
+    const products = await Product.find();
+    res.render('index.ejs', {
+      products,
+
+      message: '',
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // *** Logout ***
