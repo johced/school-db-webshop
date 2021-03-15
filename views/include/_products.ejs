@@ -1,1 +1,31 @@
 <!-- Show products grid -->
+<div class="master_container">
+    <% products.forEach(product => { %>
+<div class="item">
+    <div class="product_item">
+        <h3 class="item_title">
+            <%= product.title %>
+        </h3>
+        <div class="img_container">
+            <img src="#" alt="" class="item_img">
+        </div>
+        <div class="item_info">
+            <p class="item_description">
+                <%= product.description %>
+            </p>
+            <p class="item_price">
+                <%= product.price %>
+            </p>
+            <form action="/addtocart" method="post" class="product-form">
+                <input type="text" name="title" id="" value="<%= product.title %>" hidden>
+                <input type="number" name="quantity" id="" value="1" min="1">
+                <input type="text" name="productId" id="" value="<%= product._id %>" hidden>
+                <input type="number" name="price" id="" value="<%= product.price %>" hidden>
+    
+                <button type="submit">Buy</button>
+              </form>
+        </div>
+    </div>
+</div>
+    <% }) %>
+</div>

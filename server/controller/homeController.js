@@ -1,6 +1,6 @@
-const Product = require('../model/product')
+const Product = require('../model/product');
 
-exports.showStart = (req, res) => {
+exports.showStart = async (req, res) => {
   const products = await Product.find();
   res.render('index.ejs', {
     products,
