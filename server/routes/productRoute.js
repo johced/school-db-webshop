@@ -41,13 +41,9 @@ route.get('/addProduct', verifyAdmin, verifyUser, productController.addProduct_g
 
 route.get('/showAdminproducts', verifyAdmin, verifyUser, productController.showAdminProduct_get);
 
-route.post(
-  '/addProduct',
-  verifyAdmin,
-  verifyUser,
-  upload.single('image'),
-  productController.addProduct_post
-);
+route.post('/addProduct', verifyAdmin, verifyUser, upload.single('image'), productController.addProduct_post);
+
+route.get('/addProduct/delete/:id', verifyAdmin, verifyUser, productController.deleteAdminProduct_get);
 
 // *** export ***
 module.exports = route;
