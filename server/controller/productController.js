@@ -68,8 +68,8 @@ exports.deleteAdminProduct_get = async (req, res) => {
   }
 };
 exports.editAdminProduct_get = async (req, res) => {
+  const productId = req.params.id;
   try {
-    const productId = req.params.id;
     const user = await User.findOne({ _id: req.user.userDB._id }).populate('poductList');
     res.render('editProduct.ejs', {
       products: user.productList,
@@ -81,8 +81,8 @@ exports.editAdminProduct_get = async (req, res) => {
   }
 };
 exports.editAdminProduct_post = async (req, res) => {
+  const { title, description, price } = req.body;
   try {
-    const { title, description, price } = req.body;
     await Product.updateOne(
       { _id: req.params.id },
       {
