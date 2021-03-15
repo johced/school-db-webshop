@@ -1,5 +1,10 @@
+const Product = require('../model/product')
+
 exports.showStart = (req, res) => {
-  res.render('index.ejs');
+  const products = await Product.find();
+  res.render('index.ejs', {
+    products,
+  });
 };
 
 // *** Logout ***
