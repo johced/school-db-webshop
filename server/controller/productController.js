@@ -67,3 +67,16 @@ exports.deleteAdminProduct_get = async (req, res) => {
     console.log(err);
   }
 };
+exports.editAdminProduct_get = async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const user = await User.findOne({ _id: req.user.userDB._id }).populate('poductList');
+    res.render('editProduct.ejs', {
+      products: user.productList,
+      user: req.user.userDB,
+      productId: productId,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
