@@ -54,3 +54,16 @@ exports.showAdminProduct_get = async (req, res) => {
 
   res.render('showAdminProducts.ejs', { products: user.productList, err: '' });
 };
+
+exports.deleteAdminProduct_get = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user.userDB._id });
+    const productId = req.params.id;
+    await Product.deleteOne({ _id: productId });
+    user.productList.pull({ _id: productId });
+    await user.save();
+    res.redirect('/addProduct');
+  } catch (err) {
+    console.log(err);
+  }
+};
