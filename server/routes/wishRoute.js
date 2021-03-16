@@ -11,4 +11,7 @@ const wishListController = require('../controller/wishListController');
 route.get('/wishlist', verifyUser, wishListController.wishListShow_get);
 route.get('/wishlist/:id', verifyUser, wishListController.wishList_get);
 
+// Delete wish
+route.get('/wishlist/delete/:id', verifyUser, wishListController.deleteWish_get);
+
 module.exports = route;

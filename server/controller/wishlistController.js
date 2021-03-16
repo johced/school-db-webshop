@@ -29,3 +29,18 @@ exports.wishList_get = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.deleteWish_get = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user.userDB._id });
+
+    const wishId = req.params.id;
+
+    user.wishList.pull({ _id: wishId });
+
+    user.save();
+    res.redirect('/wishlist');
+  } catch (err) {
+    console.log(err);
+  }
+};
