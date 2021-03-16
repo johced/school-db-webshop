@@ -1,0 +1,46 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+<!--  /HEADER -->
+
+  <h1>
+    <%=user.name%>s orderlist!
+  </h1>
+
+  <a href="/logout">Logout</a>
+  <a href="/userStart">Continue shopping</a>
+  <a href="/userStart">Checkout</a>
+
+  <%- include("message") %>
+
+    <ol>
+      <% orders.forEach(order=> { %>
+        <li>
+          <h4>
+            <%= order.title %>
+          </h4>
+          <p>
+            Price: <%= order.price %> kr
+          </p>
+          <p>
+            Quantity:
+            <a href="/reduceincart/<%= order.id %>">–</a>
+            <%= order.quantity%>
+            <a href="/addincart/<%= order.id %>">+</a>
+          </p>
+          <p>Total price: <%= order.total%>kr</p>
+          <a href="/shoppingcart/remove/<%= order.id %>">Remove</a>
+        </li>
+        <% }) %>
+    </ol>
+
+    <% if (totalAmount> 1) { %>
+      <p>
+        <%=totalAmount%>
+      </p>
+    <% } %>
+    
+<a href="/checkout">Checkout</a>
+
+<!--  FOOTER -->
+<%- include('include/_footer') %>
+<!--  /FOOTER -->
