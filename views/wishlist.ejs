@@ -1,0 +1,35 @@
+<!--  HEADER -->
+<%- include("include/_header") %>
+    <!--  /HEADER -->
+
+    <h1>
+        <%= user.name %>'s Wishlist
+    </h1>
+
+    <a href="/logout">Logout</a>
+    <a href="/userStart">Back</a>
+
+    <%- include('message') %>
+
+        <ol>
+            <% wishes.forEach(wish => { %>
+                <li>
+                    <h4>
+                        <%= wish.title %>
+                    </h4>
+                    <h4>
+                        <%= wish.price %>
+                    </h4>
+                    <p>
+                        <%= wish.date %>
+                    </p>
+                    <a href="/wishlist/delete/<%= wish.id %>">Delete</a>
+                </li>
+                <%  }) %>
+        </ol>
+
+
+
+        <!--  FOOTER -->
+        <%- include("include/_footer") %>
+            <!--  /FOOTER -->
