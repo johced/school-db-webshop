@@ -38,16 +38,34 @@ route.get('/userStart', verifyUser, productController.userStart_get);
 
 // Add product
 route.get('/addProduct', verifyAdmin, verifyUser, productController.addProduct_get);
+route.post(
+  '/addProduct',
+  verifyAdmin,
+  verifyUser,
+  upload.single('image'),
+  productController.addProduct_post
+);
 
+// *** Show admin products ***
 route.get('/showAdminproducts', verifyAdmin, verifyUser, productController.showAdminProduct_get);
 
-route.post('/addProduct', verifyAdmin, verifyUser, upload.single('image'), productController.addProduct_post);
+// *** Delete product ***
+route.get(
+  '/addProduct/delete/:id',
+  verifyAdmin,
+  verifyUser,
+  productController.deleteAdminProduct_get
+);
 
-route.get('/addProduct/delete/:id', verifyAdmin, verifyUser, productController.deleteAdminProduct_get);
-
-//Edit product
+// *** Edit product ***
 route.get('/addProduct/edit/:id', verifyAdmin, verifyUser, productController.editAdminProduct_get);
-route.post('/addProduct/edit/:id', verifyAdmin, verifyUser, upload.single('image'), productController.editAdminProduct_post);
+route.post(
+  '/addProduct/edit/:id',
+  verifyAdmin,
+  verifyUser,
+  upload.single('image'),
+  productController.editAdminProduct_post
+);
 
-// *** export ***
+// *** Export ***
 module.exports = route;
