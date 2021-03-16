@@ -10,6 +10,7 @@ exports.userStart_get = async (req, res) => {
       user: req.user.userDB,
       products,
     });
+    console.log(req.user.userDB.wishList);
   } catch (err) {
     console.log(err);
   }
