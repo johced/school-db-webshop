@@ -1,0 +1,47 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+<!--  /HEADER -->
+
+    <h1>Welcome to checkout, <%= user.name %>
+    </h1>
+
+    <a href="/shoppingcart">Back to cart</a>
+
+    <ol>
+        <% cart.products.forEach(product=> { %>
+            <li>
+                <h4>
+                    <%= product.title %>
+                </h4>
+
+                <p>Price: <%= product.price %> kr</p>
+
+                <p>Quantity: <%= product.quantity %>
+                </p>
+
+                <p>Totalprice: <%= product.total %> kr</p>
+
+            </li>
+            <% }) %>
+    </ol>
+
+    <h3>Total Amount: <%= cart.totalAmount %> kr</h3>
+
+    <button type="submit" class="checkoutbtn">To Payment</button>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+
+        var stripe = Stripe('pk_test_51IP5gMIFbysKbuJfxsHEeeeJnYVkWANc37xb5YioOosQbccZ6Xvy0rlbkJd0xuQyxH2xAiFPB08a3IhwuVDJhwsZ00rBNjlsY6');
+
+        document.querySelector(".checkoutbtn").addEventListener("click", () => {
+
+            stripe.redirectToCheckout({ sessionId: "<%= sessionId %>" });
+        })
+
+    </script>
+
+<!--  FOOTER -->
+<%- include('include/_footer') %>
+<!--  /FOOTER -->
