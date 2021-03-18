@@ -4,13 +4,22 @@ const fs = require('fs');
 const path = require('path');
 
 exports.userStart_get = async (req, res) => {
+  const page = +req.query.page || 1;
   try {
-    const products = await Product.find();
+    const totalProducts = await Product.countDocuments();
+    const limitPerPage = 2;
+    const totalPages = Math.ceil(totalProducts / limitPerPage);
+    const productsToShow = limitPerPage * page;
+    const products = await Product.find().limit(productsToShow);
     res.render('userStart.ejs', {
       user: req.user.userDB,
       products,
+      page,
+      totalProducts,
+      totalPages,
+      limitPerPage,
+      productsToShow,
     });
-    console.log(req.user.userDB.wishList);
   } catch (err) {
     console.log(err);
   }
