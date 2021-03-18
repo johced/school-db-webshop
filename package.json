@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "devStart": "nodemon main.js"
+    "devStart": "nodemon main.js",
+    "build-css": "node-sass --include-path scss scss/main.scss assets/css/main.css",
+    "index-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "multer": "^1.4.2",
+    "node-sass-middleware": "^0.11.0",
     "nodemailer": "^6.5.0",
     "stripe": "^8.138.0"
   },

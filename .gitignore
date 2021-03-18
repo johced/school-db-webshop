@@ -2,3 +2,8 @@ node_modules
 .env
 .DS_Store
 uploads
+.vscode/
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
