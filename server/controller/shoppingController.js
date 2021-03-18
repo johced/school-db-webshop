@@ -76,12 +76,15 @@ exports.checkoutShow_get = async (req, res) => {
   try {
     const cart = await Cart.findOne({ userId }).populate('userId');
 
+    if (cart == null) req.flash('warning_msg', 'You have to add some products first!');
+
     res.render('shoppingCart.ejs', {
       orders: cart.products,
       user: req.user.userDB,
       totalAmount: cart.totalAmount,
     });
   } catch (err) {
+    res.redirect('back');
     console.log(err);
   }
 };
