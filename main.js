@@ -3,7 +3,9 @@ const express = require('express');
 const morgan = require('morgan');
 const flash = require('connect-flash');
 const session = require('express-session');
+const nodeSass = require('node-sass-middleware');
 const connectDB = require('./server/database/connection');
+
 const path = require('path');
 
 const app = express();
@@ -11,6 +13,14 @@ require('dotenv').config();
 
 // *** Log requiest ***
 app.use(morgan('tiny'));
+
+// *** SCSS ***
+app.use(
+  nodeSass({
+    src: __dirname + '/scss',
+    dest: __dirname + '/assets/css',
+  })
+);
 
 // *** MongoDB connection ***
 connectDB();

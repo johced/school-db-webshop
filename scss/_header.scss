@@ -1,0 +1,24 @@
+.start-header {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  .start-header-title {
+    flex: 2;
+    .logo {
+      color: $logo-color;
+      flex: 1;
+    }
+  }
+  .start-header-links {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      padding-left: 10px;
+    }
+  }
+}
