@@ -16,6 +16,20 @@
  <%- include("message") %>
 
  <%- include("include/_products") %>
+
+ <% if(totalPages> 1){%>
+  <ul class="pagination">
+    <%if(page>1){%>
+      <li><a href="/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
+          less </a>
+      </li>
+      <%}%>
+        <% if(totalPages !==productsToShow/limitPerPage){%>
+          <li><a href="/?page=<%=(productsToShow/limitPerPage)+1 %>">more
+              &rarr;</a></li>
+          <% } %>
+            <%} %>
+  </ul>
 <!--  FOOTER -->
 <%- include('include/_footer') %>
 <!--  /FOOTER -->
