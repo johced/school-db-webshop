@@ -52,17 +52,11 @@ exports.addProduct_post = async (req, res) => {
     user.addProduct(product._id);
 
     req.flash('success_msg', 'Product added!');
-    res.redirect('/showAdminProducts');
+    res.redirect('/addProduct');
   } catch (err) {
     req.flash('warning_msg', 'Wrong image type, Only png, jpeg & gif');
     res.redirect('/addProduct');
   }
-};
-
-exports.showAdminProduct_get = async (req, res) => {
-  const user = await User.findOne({ _id: req.user.userDB._id }).populate('productList');
-
-  res.render('showAdminProducts.ejs', { products: user.productList, err: '' });
 };
 
 exports.deleteAdminProduct_get = async (req, res) => {

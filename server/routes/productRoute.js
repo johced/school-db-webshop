@@ -46,9 +46,6 @@ route.post(
   productController.addProduct_post
 );
 
-// *** Show admin products ***
-route.get('/showAdminproducts', verifyAdmin, verifyUser, productController.showAdminProduct_get);
-
 // *** Delete product ***
 route.get(
   '/addProduct/delete/:id',
