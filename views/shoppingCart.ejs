@@ -1,14 +1,32 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
 <!--  /HEADER -->
+<div class="start-header">
+  <div class="start-header-title">
+    <h1 class="logo">School-shop</h1>
+   </div>
 
+<div class="start-header-links">
+<% if (user.role) { %>
+      <a href="/addProduct"><i class="fas fa-plus"></i></a>
+      <% } %>
+      <a href="/wishlist"><i class="fas fa-heart"></i></a>
+
+<a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+
+    <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+    </div>
+
+    <div class="welcome-user">
   <h1>
     <%=user.name%>s orderlist!
   </h1>
-
-  <a href="/logout">Logout</a>
+</div>
+<div class="back-link-shopping">
+ 
   <a href="/userStart">Continue shopping</a>
-
+</div>
   <%- include("message") %>
 
     <ol>
@@ -33,13 +51,15 @@
     </ol>
 
     <% if (totalAmount> 1) { %>
+      <div class="total-amount">
       <p>
-        <%=totalAmount%>
+        Total amount: <%=totalAmount%> kr
       </p>
+    </div>
     <% } %>
-    
+    <div class="checkout-link">
 <a href="/checkout">Checkout</a>
-
+</div>
 <!--  FOOTER -->
 <%- include('include/_footer') %>
 <!--  /FOOTER -->

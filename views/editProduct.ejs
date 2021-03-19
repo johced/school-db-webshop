@@ -1,8 +1,9 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
   <!--  /HEADER -->
-  <h2>Edit Product Page</h2>
+ 
 
+<div class="add-form">
   <form action="/addProduct" method="POST" enctype="multipart/form-data">
     <input type="text" name="title" id="" placeholder="product name" />
     <input type="file" name="image" id="image" value="" required>
@@ -11,10 +12,13 @@
     <button type="submit">Add</button>
     <%- include("message") %>
   </form>
+</div>
+<div class="back-link-admin">
   <a href="/userStart">Back to Start</a>
-
+</div>
   <% products.forEach(product=>{%>
     <% if (product._id==productId) { %>
+      <div class="add-form-update">
       <form action="/addProduct/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
         <input type=" text" name="title" id="" value="<%= product.title %>"  />
 
@@ -25,6 +29,7 @@
         <button type="submit">Update</button>
         <a href="/addProduct">Cancel</a>
       </form>
+    </div>
       <% } else { %>
         <div class="products-container">
           <ul>
@@ -38,15 +43,16 @@
                   <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
                     alt="" class="item_img" />
                 </div>
-                <span>
-                  <h4>Description:</h4>
-                  <%=product.description%>
-                </span>
-                <span>
-                  <h4>Price:</h4>
-                  <%=product.price%>
-                </span>
+              
               </div>
+              <span>
+                <h4>Description:</h4>
+                <%=product.description%>
+              </span>
+              <span>
+                <h4>Price:</h4>
+                <%=product.price%>
+              </span>
             </li>
             <a href="/addProduct/edit/<%= product.id %>" class="products-a-edit">Edit</a><a
               href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>

@@ -1,0 +1,30 @@
+.back-link-shopping {
+  margin: 10px;
+  padding-top: 10px;
+  a {
+    color: $primary-red;
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+}
+
+.total-amount {
+  margin: 15px;
+  font-size: 1rem;
+  font-weight: $fw-bold;
+}
+
+.checkout-link {
+  margin: 15px;
+  width: 85px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: $primary-red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: $primary-white;
+  }
+}
