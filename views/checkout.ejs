@@ -1,28 +1,29 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
-<!--  /HEADER -->
-<div class="start-header">
-    <div class="start-header-title">
-      <h1 class="logo">School-shop</h1>
-     </div>
-  
-  <div class="start-header-links">
-  <% if (user.role) { %>
-        <a href="/addProduct"><i class="fas fa-plus"></i></a>
-        <% } %>
-        <a href="/wishlist"><i class="fas fa-heart"></i></a>
-  
-  <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
-  
-      <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
-      </div>
-      </div>
-      <div class="welcome-user">
-    <h1>Welcome to checkout, <%= user.name %>
-    </h1>
-</div>
+    <!--  /HEADER -->
+    <div class="start-header">
+        <div class="start-header-title">
+            <h1 class="logo">School-shop</h1>
+        </div>
 
-    <a href="/shoppingcart">Back to cart</a>
+        <div class="start-header-links">
+            <% if (user.role) { %>
+                <a href="/addProduct"><i class="fas fa-plus"></i></a>
+                <% } %>
+                    <a href="/wishlist"><i class="fas fa-heart"></i></a>
+
+                    <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+    <div class="welcome-user">
+        <h1>Welcome to checkout,
+            <%= user.name %>
+        </h1>
+    </div>
+
+    <div class="back-link-cart"><a href="/shoppingcart">Back to cart</a></div>
 
     <ol>
         <% cart.products.forEach(product=> { %>
@@ -31,34 +32,39 @@
                     <%= product.title %>
                 </h4>
 
-                <p>Price: <%= product.price %> kr</p>
+                <p>Price:
+                    <%= product.price %> kr</p>
 
-                <p>Quantity: <%= product.quantity %>
+                <p>Quantity:
+                    <%= product.quantity %>
                 </p>
 
-                <p>Totalprice: <%= product.total %> kr</p>
+                <p>Total price:
+                    <%= product.total %> kr</p>
 
             </li>
             <% }) %>
     </ol>
-
-    <h3>Total Amount: <%= cart.totalAmount %> kr</h3>
-
-    <button type="submit" class="checkoutbtn">To Payment</button>
-
+    <div class="total-amount">
+        <p>Total Amount:
+            <%= cart.totalAmount %> kr</p>
+    </div>
+    <div class="payment-link">
+        <button type="submit" class="checkoutbtn">To Payment</button>
+    </div>
     <script src="https://js.stripe.com/v3/"></script>
 
     <script>
-
         var stripe = Stripe('pk_test_51IP5gMIFbysKbuJfxsHEeeeJnYVkWANc37xb5YioOosQbccZ6Xvy0rlbkJd0xuQyxH2xAiFPB08a3IhwuVDJhwsZ00rBNjlsY6');
 
         document.querySelector(".checkoutbtn").addEventListener("click", () => {
 
-            stripe.redirectToCheckout({ sessionId: "<%= sessionId %>" });
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
         })
-
     </script>
 
-<!--  FOOTER -->
-<%- include('include/_footer') %>
-<!--  /FOOTER -->
+    <!--  FOOTER -->
+    <%- include('include/_footer') %>
+        <!--  /FOOTER -->

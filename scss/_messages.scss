@@ -1,11 +1,18 @@
 .message {
-  color: white;
+    color: white;
 }
 
 .warning-msg {
-  color: red;
+    color: red;
 }
 
 .success-msg {
-  color: green;
+    color: green;
+}
+
+.message,
+.warning-msg,
+.success-msg {
+    margin-top: 3rem;
+    text-align: center;
 }
