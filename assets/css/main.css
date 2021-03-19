@@ -3,11 +3,36 @@
   cursor: pointer;
   border: none;
   border-radius: 7px;
-  width: 48px;
-  height: 28px;
   background-color: #f74468;
   color: #ffffff;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; }
+
+.back-link-cart {
+  margin: 10px;
+  padding-top: 10px; }
+  .back-link-cart a {
+    color: #f74468;
+    padding-top: 10px;
+    padding-left: 5px; }
+
+.total-amount {
+  margin: 15px;
+  font-size: 1rem;
   font-weight: 900; }
+
+.payment-link {
+  margin: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #f74468;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .payment-link a {
+    color: #ffffff; }
 
 .start-header {
   background-color: #292e32;
@@ -70,6 +95,11 @@
       left: 42%; }
     .login-container form p {
       padding-bottom: 10px; }
+  .login-container p {
+    color: #ffffff; }
+  .login-container a {
+    padding: 0.5rem;
+    font-weight: 900; }
 
 .message {
   color: white; }
@@ -79,6 +109,12 @@
 
 .success-msg {
   color: green; }
+
+.message,
+.warning-msg,
+.success-msg {
+  margin-top: 3rem;
+  text-align: center; }
 
 .master_container {
   margin-top: 30px;
@@ -178,6 +214,13 @@
     color: #f74468;
     padding-top: 10px;
     padding-left: 5px; }
+
+.plus-minus {
+  color: #000000;
+  font-weight: 900; }
+
+.remove-link {
+  color: #000000; }
 
 .total-amount {
   margin: 15px;
@@ -289,11 +332,27 @@
 .products-a-delete:hover {
   font-weight: bold; }
 
-.wishlist-delete {
-  color: black; }
+.wishlist-delete i {
+  color: #f74468;
+  margin-top: 0.5rem; }
 
 .pagination {
   font-family: "Roboto", sans-serif; }
+
+.thankyou {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem; }
+  .thankyou h1 {
+    margin: 2rem; }
+  .thankyou p {
+    width: 90%; }
+
+.center {
+  text-align: center; }
 
 * {
   margin: 0;

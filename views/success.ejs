@@ -1,11 +1,38 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
-<!--  /HEADER -->
+    <!--  /HEADER -->
 
-  <p>Tack! <%= user.name%>
-  </p>
-  <a href="/userStart">Continue shopping</a>
+    <div class="start-header">
+        <div class="start-header-title">
+            <h1 class="logo">School-shop</h1>
+        </div>
 
-<!--  FOOTER -->
-<%- include('include/_footer') %>
-<!--  /FOOTER -->
+        <div class="start-header-links">
+            <% if (user.role) { %>
+                <a href="/addProduct"><i class="fas fa-plus"></i></a>
+                <% } %>
+                    <a href="/wishlist"><i class="fas fa-heart"></i></a>
+
+                    <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+
+    <div class="thankyou">
+
+        <h1>Thank you! <br>
+
+        </h1>
+        <p>
+            <%= user.name%>, an order confirmation has been sent to your email address.
+        </p>
+
+    </div>
+
+    <div class="back-link-shopping center">
+        <a href="/userStart">Continue shopping</a>
+    </div>
+    <!--  FOOTER -->
+    <%- include('include/_footer') %>
+        <!--  /FOOTER -->
