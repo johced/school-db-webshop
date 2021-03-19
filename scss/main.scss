@@ -1,4 +1,6 @@
 @import 'colors';
+@import 'typography';
+
 @import 'checkout';
 @import 'footer';
 @import 'header';
@@ -8,10 +10,9 @@
 @import 'register';
 @import 'reset';
 @import 'shoppingcart';
-@import 'typography';
+@import 'admin';
 @import 'wishlist';
 @import 'pagination';
-@import 'admin';
 
 * {
   margin: 0;
@@ -26,7 +27,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: $primary-white;
 }
 
 ol {

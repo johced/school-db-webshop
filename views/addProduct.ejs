@@ -1,7 +1,11 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
 <!--  /HEADER -->
-<a href="/userStart">Back to Start</a>
+
+<div class="back-link-admin">
+  <a href="/userStart">Back to Start</a>
+</div>
+
 <div class="add-form">
   
   <form action="/addProduct" method="POST" enctype="multipart/form-data">
@@ -35,12 +39,13 @@
             <h4>Price:</h4>
             <%=product.price%>
           </span>
-    </div>
-    </li>
+
+        </li>
     <a href="/addProduct/edit/<%= product.id %>" class="products-a-edit">Edit</a><a
       href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>
-    </ul>
-    </div>
+   
+  </ul>
+  </div>
     <%})%>
 
 <!--  FOOTER -->

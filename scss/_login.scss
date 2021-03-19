@@ -5,25 +5,31 @@
   align-items: center;
   /* border: 1px solid black; */
   height: 100vh;
-  background-color: var(--clr-grey);
+  background-color: $primary-grey;
 
-  .login-container form {
+  form {
     display: flex;
     flex-direction: column;
     width: 300px;
     padding-bottom: 20px;
-    .login-container form input {
+    input {
+      flex-direction: column;
       margin-bottom: 5px;
       padding: 5px;
     }
-    .login-container button {
-      background-color: var(--clr-dark);
-      color: var(--clr-light);
-      padding: 3px;
+    button {
+      background-color: $primary-red;
+      color: $primary-white;
+      padding: 5px;
       border-radius: 50px;
       margin-top: 5px;
+      border: none;
+      width: 60px;
+      position: relative;
+      top: 6%;
+      left: 42%;
     }
-    .login-container p {
+    p {
       padding-bottom: 10px;
     }
   }

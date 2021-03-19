@@ -1,24 +1,39 @@
 .start-header {
-  background-color: $background-color;
+  background-color: $primary-grey;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
   align-items: center;
-  text-align: center;
+  text-align: right;
   .start-header-title {
     flex: 2;
-    .logo {
-      color: $logo-color;
+    h1 {
+      color: $primary-white;
       flex: 1;
+      font-size: 1.4rem;
     }
   }
   .start-header-links {
     flex: 3;
     display: flex;
+    // flex-direction: column;
+
     justify-content: flex-end;
     a {
       padding-left: 10px;
+      margin: 0.4rem;
     }
+  }
+}
+
+.welcome-user {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  h1 {
+    color: $primary-light;
+    font-size: 1.2rem;
   }
 }
