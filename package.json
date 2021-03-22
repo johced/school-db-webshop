@@ -2,10 +2,10 @@
   "name": "school-db-webshop",
   "version": "1.0.0",
   "description": "School webshop project",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node main.js",
-    "devStart": "nodemon main.js",
+    "start": "node index.js",
+    "devStart": "nodemon index.js",
     "build-css": "node-sass --include-path scss scss/main.scss assets/css/main.css",
     "index-css": "nodemon -e scss -x \"npm run build-css\""
   },
