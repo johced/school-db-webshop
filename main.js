@@ -24,11 +24,12 @@ app.use(
 
 // *** MongoDB connection ***
 connectDB();
-const PORT = process.env.PORT || 8080;
 
 // *** adds the form to our body property of the request ***
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+const PORT = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
 
