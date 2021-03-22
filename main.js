@@ -49,7 +49,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// *** Load assets ***
+// *** Load assets ****
 app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 
 // *** Load routers ***
