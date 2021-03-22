@@ -13,7 +13,7 @@ exports.checkout_get = async (req, res) => {
     if (cart.products.length <= 0 || !cart.products) return res.redirect('/userStart');
     const session = await stripe.checkout.sessions.create({
       success_url: 'https://school-db-webshop.herokuapp.com/success',
-      cancel_url: 'http://school-db-webshop.herokuapp.com/shoppingCart',
+      cancel_url: 'https://school-db-webshop.herokuapp.com/shoppingCart',
       payment_method_types: ['card'],
       billing_address_collection: 'required',
       line_items: cart.products.map((product) => {
