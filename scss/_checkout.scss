@@ -1,40 +1,40 @@
 .checkoutbtn {
-    cursor: pointer;
-    border: none;
-    border-radius: 7px;
-    background-color: $primary-red;
-    color: $primary-white;
-    font-weight: $fw-normal;
-    font-family: $ff-s;
-    font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  background-color: $primary-red;
+  color: $primary-white;
+  font-weight: $fw-normal;
+  font-family: $ff-s;
+  font-size: 16px;
 }
 
 .back-link-cart {
-    margin: 10px;
+  margin: 10px;
+  padding-top: 10px;
+  a {
+    color: $primary-red;
     padding-top: 10px;
-    a {
-        color: $primary-red;
-        padding-top: 10px;
-        padding-left: 5px;
-    }
+    padding-left: 5px;
+  }
 }
 
 .total-amount {
-    margin: 15px;
-    font-size: 1rem;
-    font-weight: $fw-bold;
+  margin: 15px;
+  font-size: 1rem;
+  font-weight: $fw-bold;
 }
 
 .payment-link {
-    margin: 15px;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: $primary-red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a {
-        color: $primary-white;
-    }
+  margin: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: $primary-red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: $primary-white;
+  }
 }
