@@ -2,7 +2,7 @@
   "name": "school-db-webshop",
   "version": "1.0.0",
   "description": "School webshop project",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "node main.js",
     "devStart": "nodemon main.js",
