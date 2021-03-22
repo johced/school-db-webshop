@@ -12,7 +12,7 @@ const app = express();
 require('dotenv').config();
 
 // *** Log requiest ***
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 // *** SCSS ***
 app.use(
