@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
-    "devStart": "nodemon main.js",
-    "build-css": "node-sass --include-path scss scss/main.scss assets/css/main.css",
-    "index-css": "nodemon -e scss -x \"npm run build-css\""
+    "devStart": "nodemon main.js"
   },
   "repository": {
     "type": "git",
