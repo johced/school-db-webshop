@@ -54,8 +54,8 @@ app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 
 // *** Load routers ***
 app.use('/', require('./server/routes/loginRoute'));
-app.use('/', require('./server/routes/productRoute'));
 app.use('/', require('./server/routes/wishRoute'));
+app.use('/', require('./server/routes/productRoute'));
 app.use('/', require('./server/routes/shoppingRoute'));
 
 // *** Create Local Server ***
