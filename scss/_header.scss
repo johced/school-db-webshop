@@ -1,0 +1,38 @@
+.start-header {
+  background-color: $primary-grey;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  .start-header-content {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    div {
+      width: 50%;
+    }
+    .start-header-title {
+      h1 {
+        color: $primary-white;
+        font-size: 1.4rem;
+      }
+    }
+    .start-header-links {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        padding-left: 10px;
+        margin: 0.4rem;
+      }
+    }
+  }
+}
+.welcome-user {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  h1 {
+    color: $primary-light;
+    font-size: 1.2rem;
+  }
+}

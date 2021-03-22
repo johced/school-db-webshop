@@ -1,0 +1,38 @@
+@import 'colors';
+@import 'typography';
+@import 'checkout';
+@import 'footer';
+@import 'header';
+@import 'login';
+@import 'messages';
+@import 'products';
+@import 'register';
+@import 'shoppingcart';
+@import 'admin';
+@import 'wishlist';
+@import 'pagination';
+@import 'success';
+@import 'responsive';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ff-s;
+  background-color: $background-color;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-white;
+}
+
+ol {
+  padding-left: 30px;
+  padding-top: 20px;
+  li {
+    padding-bottom: 20px;
+  }
+}

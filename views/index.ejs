@@ -1,0 +1,37 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+<!--  /HEADER -->
+
+<div class="start-header">
+  <div class="start-header-content">
+     <div class="start-header-title">
+      <h1 class="logo"><a href="/">School-shop</a></h1>
+      
+      </div>
+<div class="start-header-links">
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+  </div>
+  </div>
+  </div>
+    <!-- Show products grid-->
+ <%- include("message") %>
+
+ <%- include("include/_products") %>
+
+ <% if(totalPages> 1){%>
+  <ul class="pagination">
+    <%if(page>1){%>
+      <li><a href="/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
+          less </a>
+      </li>
+      <%}%>
+        <% if(totalPages !==productsToShow/limitPerPage){%>
+          <li><a href="/?page=<%=(productsToShow/limitPerPage)+1 %>">more
+              &rarr;</a></li>
+          <% } %>
+            <%} %>
+  </ul>
+<!--  FOOTER -->
+<%- include('include/_footer') %>
+<!--  /FOOTER -->

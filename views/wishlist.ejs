@@ -1,0 +1,52 @@
+<!--  HEADER -->
+<%- include('include/_header') %>
+    <!--  /HEADER -->
+    <div class="start-header">
+        <div class="start-header-content">
+          <div class="start-header-title">
+            <h1 class="logo"><a href="/userStart">School-shop</a></h1>
+           </div>
+        
+      <div class="start-header-links">
+        <% if (user.role) { %>
+              <a href="/addProduct"><i class="fas fa-plus"></i></a>
+              <% } %>
+              <a href="/wishlist"><i class="fas fa-heart"></i></a>
+      
+        <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+        
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </div>
+          </div>
+    <div class="welcome-user">
+        <h1>
+            <%=user.name%>s wishlist!</h1>
+    </div>
+
+    <div class="back-link-shopping">
+        <a href="/userStart">Back</a>
+    </div>
+    <%- include("message") %>
+
+        <ol>
+            <% wishes.forEach(wish=> { %>
+
+                <li>
+                    <h4>
+                        <%= wish.title %>
+                    </h4>
+                    <h4>
+                        <%= wish.price %> kr</h4>
+                    <p>
+                        <%= wish.date %>
+                    </p>
+                    <a href="/wishlist/delete/<%= wish.id %>" class="wishlist-delete"><i class="fas fa-times"></i></a>
+                </li>
+
+                <% }) %>
+        </ol>
+
+        <!--  FOOTER -->
+        <%- include('include/_footer') %>
+            <!--  /FOOTER -->
