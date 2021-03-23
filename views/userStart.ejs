@@ -1,44 +1,43 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
-  <!--  /HEADER -->
-  <div class="start-header">
-    <div class="start-header-content">
-      <div class="start-header-title">
-        <h1 class="logo"><a href="/userStart">School-shop</a></h1>
-       </div>
-    
-  <div class="start-header-links">
-    <% if (user.role) { %>
-          <a href="/addProduct"><i class="fas fa-plus"></i></a>
-          <% } %>
-          <a href="/wishlist"><i class="fas fa-heart"></i></a>
-  
-    <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
-    
-        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+    <!--  /HEADER -->
+    <div class="start-header">
+        <div class="start-header-content">
+            <div class="start-header-title">
+                <h1 class="logo"><a href="/userStart">School-shop</a></h1>
+            </div>
+
+            <div class="start-header-links">
+                <% if (user.role) { %>
+                    <a href="/addProduct"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                        <a href="/wishlist"><i class="fas fa-heart"></i></a>
+
+                        <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+
+                        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
         </div>
     </div>
-      </div>
-          <%- include("message") %>
-          <div class="welcome-user">
-            <h1>Welcome <%= user.name %>!</h1>
-          </div>
-            <%- include("include/_products") %>
+    <%- include("message") %>
+        <div class="welcome-user">
+            <h1>Welcome
+                <%= user.name %>!</h1>
+        </div>
+        <%- include("include/_products") %>
 
             <% if(totalPages> 1){%>
-              <ul class="pagination">
-                <%if(page>1){%>
-                  <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
-                      less </a>
-                  </li>
-                  <%}%>
-                    <% if(totalPages !==productsToShow/limitPerPage){%>
-                      <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)+1 %>">more
-                          &rarr;</a></li>
-                      <% } %>
-                        <%} %>
-              </ul>
-             
-<!--  FOOTER -->
-<%- include('include/_footer') %>
-<!--  /FOOTER -->
+                <ul class="pagination">
+                    <%if(page>1){%>
+                        <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)-1 %>"><i class="fas fa-chevron-up"></i></a>
+                        </li>
+                        <%}%>
+                            <% if(totalPages !==productsToShow/limitPerPage){%>
+                                <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)+1 %>"><i class="fas fa-chevron-down"></i></a></li>
+                                <% } %>
+                                    <%} %>
+                </ul>
+
+                <!--  FOOTER -->
+                <%- include('include/_footer') %>
+                    <!--  /FOOTER -->
