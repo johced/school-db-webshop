@@ -4,7 +4,7 @@ exports.showStart = async (req, res) => {
   const page = +req.query.page || 1;
   try {
     const totalProducts = await Product.countDocuments();
-    const limitPerPage = 6;
+    const limitPerPage = 8;
     const totalPages = Math.ceil(totalProducts / limitPerPage);
     const productsToShow = limitPerPage * page;
     const products = await Product.find().limit(productsToShow);

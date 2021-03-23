@@ -3,13 +3,14 @@
 <!-- /HEADER -->
 
 <div class="login-container">
+  <%- include("message") %>
     <form action="/login" method="POST">
       <input type="email" name="email" id="" placeholder="Email" />
       <input type="password" name="password" id="" placeholder="Password" />
       <button type="submit">Login</button>
       
     </form>
-    <%- include("message") %>
+    
     <p>Forgot Password? <a href="/reset">Reset</a></p>
       
     <a href="/">Back to Start</a>

@@ -2,6 +2,7 @@
 <%- include('include/_header') %>
     <!--  /HEADER -->
     <div class="login-container">
+        <%- include("message")%>
         <form action="/resetPasswordForm" method="post">
 
             <input type="password" name="password" id="" placeholder="new password">
@@ -9,7 +10,7 @@
             <input type="email" name="email" value="<%=email%>" hidden>
             <button type="submit">Reset</button>
 
-            <%- include("message")%>
+    
         </form>
     </div>
     <!--  FOOTER -->

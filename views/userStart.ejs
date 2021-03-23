@@ -28,13 +28,11 @@
             <% if(totalPages> 1){%>
               <ul class="pagination">
                 <%if(page>1){%>
-                  <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
-                      less </a>
+                  <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)-1 %>"><i class="fas fa-chevron-up"></i></a>
                   </li>
                   <%}%>
                     <% if(totalPages !==productsToShow/limitPerPage){%>
-                      <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)+1 %>">more
-                          &rarr;</a></li>
+                      <li><a href="/userStart/?page=<%=(productsToShow/limitPerPage)+1 %>"><i class="fas fa-chevron-down"></i></a></li>
                       <% } %>
                         <%} %>
               </ul>

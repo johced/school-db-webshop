@@ -20,14 +20,14 @@ exports.login_post = async (req, res) => {
     const userDB = await User.findOne({ email: email });
     if (!userDB)
       return res.render('login.ejs', {
-        message: 'Usr name or pwd do not exist',
+        message: 'Wrong user name or password',
       });
 
     const validUser = await bcrypt.compare(password, userDB.password);
 
     if (!validUser)
       return res.render('login.ejs', {
-        message: 'Usr name or pwd do not exist',
+        message: 'Wrong user name or password',
       });
 
     const jwtToken = await jwt.sign({ userDB: userDB }, process.env.SECRET_KEY);
