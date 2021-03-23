@@ -3,19 +3,21 @@
     <!--  /HEADER -->
 
     <div class="start-header">
-        <div class="start-header-title">
-            <h1 class="logo">School-shop</h1>
-        </div>
+        <div class="start-header-content">
+            <div class="start-header-title">
+                <h1 class="logo">School-shop</h1>
+            </div>
 
-        <div class="start-header-links">
-            <% if (user.role) { %>
-                <a href="/addProduct"><i class="fas fa-plus"></i></a>
-                <% } %>
-                    <a href="/wishlist"><i class="fas fa-heart"></i></a>
+            <div class="start-header-links">
+                <% if (user.role) { %>
+                    <a href="/addProduct"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                        <a href="/wishlist"><i class="fas fa-heart"></i></a>
 
-                    <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+                        <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
 
-                    <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
         </div>
     </div>
 

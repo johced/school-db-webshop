@@ -2,13 +2,14 @@
 <%- include('include/_header') %>
     <!--  /HEADER -->
     <div class="login-container">
-        <form action="/reset" method="post">
+        <%- include("message") %>
+            <form action="/reset" method="post">
 
-            <input type="email" name="email" id="" placeholder="Your email">
-            <button type="submit">Send</button>
+                <input type="email" name="email" id="" placeholder="Your email">
+                <button type="submit">Send</button>
 
-            <%- include("message") %>
-        </form>
+
+            </form>
             <a href="/">Back to Start</a>
     </div>
 
