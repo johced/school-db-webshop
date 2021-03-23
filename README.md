@@ -6,6 +6,8 @@ Note: In order to be able to add/edit products on our Heroku page, we have to ma
 
 ## Important note
 
+If you want to clone repo and try it out on localhost, do so from develop branch.
+
 We have developed the project in localhost environment, when deploying to Heroku, we needed to add uploads folder and change some links. Hence we chose to only work with feature/branches -> develop and then work directly within main when updating live/Heroku deployment. 
 
 ## Background
