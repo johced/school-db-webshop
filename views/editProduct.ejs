@@ -31,9 +31,9 @@
         </form>
       </div>
   </div>
-<% } else { %>
+
 <div class="products-flex-container">
-      
+      <% } else { %>
         <div class="products-container">
           <ul>
             <li class="products-li">
@@ -61,10 +61,10 @@
               href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>
           </ul>
         </div>
-       
-</div> 
-<% } %>
+       <% } %>
 <%})%>
+</div> 
+
 </div>
             <!--  FOOTER -->
             <%- include('include/_footer') %>
