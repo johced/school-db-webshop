@@ -64,6 +64,11 @@
       color: $primary-white;
       font-weight: $fw-bold;
     }
+    a {
+      color: black;
+      padding-left: 6px;
+      padding-top: 5px;
+    }
   }
 }
 .add-edit-wrapper {

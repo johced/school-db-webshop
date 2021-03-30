@@ -15,7 +15,7 @@
     </div>
     <div class="back-link-admin">
       <a href="/userStart">Back to Start</a>
-    </div>
+    </div> </div>
     <% products.forEach(product=>{%>
       <% if (product._id==productId) { %>
         <div class="add-form-update">
@@ -30,10 +30,10 @@
           <a href="/addProduct">Cancel</a>
         </form>
       </div>
-  </div>
-
+ 
+  <% } else { %>
 <div class="products-flex-container">
-      <% } else { %>
+    
         <div class="products-container">
           <ul>
             <li class="products-li">
@@ -61,10 +61,10 @@
               href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>
           </ul>
         </div>
-       <% } %>
+     <% } %>
 <%})%>
 </div> 
-
+  
 </div>
             <!--  FOOTER -->
             <%- include('include/_footer') %>
