@@ -1,21 +1,31 @@
 <!--  HEADER -->
 <%- include('include/_header') %>
   <!--  /HEADER -->
+  <div class="start-header">
+    <div class="start-header-content">
+      <div class="start-header-title">
+        <h1 class="logo"><a href="/userStart">School-shop</a></h1>
+       </div>
+    
+  <div class="start-header-links">
+    <% if (user.role) { %>
+          <a href="/addProduct"><i class="fas fa-plus"></i></a>
+          <% } %>
+          <a href="/wishlist"><i class="fas fa-heart"></i></a>
+  
+    <a href="/shoppingCart"><i class="fas fa-shopping-bag"></i></a>
+    
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+      </div>
 <div class="add-edit-wrapper">
   <div class="addproducts-flex-container">
-    <div class="add-form">
-      <form action="/addProduct" method="POST" enctype="multipart/form-data">
-        <input type="text" name="title" id="" placeholder="product name" />
-        <input type="file" name="image" id="image" value="" required>
-        <input type="text" name="description" id="" placeholder="product description" />
-        <input type="number" name="price" id="" placeholder="product price" />
-        <button type="submit">Add</button>
-        <%- include("message") %>
-      </form>
-    </div>
+   
     <div class="back-link-admin">
       <a href="/userStart">Back to Start</a>
-    </div> </div>
+    </div> 
+
     <% products.forEach(product=>{%>
       <% if (product._id==productId) { %>
         <div class="add-form-update">
@@ -30,41 +40,12 @@
           <a href="/addProduct">Cancel</a>
         </form>
       </div>
- 
-  <% } else { %>
-<div class="products-flex-container">
-    
-        <div class="products-container">
-          <ul>
-            <li class="products-li">
-              <div class="products-content">
-                <span>
-                  <h3>Title:</h3>
-                  <%=product.title%>
-                </span>
-                <div class="img_container">
-                  <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
-                    alt="" class="item_img" />
-                </div>
-              
-              </div>
-              <span>
-                <h4>Description:</h4>
-                <%=product.description%>
-              </span>
-              <span>
-                <h4>Price:</h4>
-                <%=product.price%>
-              </span>
-            </li>
-            <a href="/addProduct/edit/<%= product.id %>" class="products-a-edit">Edit</a><a
-              href="/addProduct/delete/<%= product.id %>" class="products-a-delete">Delete</a>
-          </ul>
-        </div>
-     <% } %>
-<%})%>
-</div> 
+    </div>
   
+  <% } %>
+ 
+
+  <%})%>
 </div>
             <!--  FOOTER -->
             <%- include('include/_footer') %>

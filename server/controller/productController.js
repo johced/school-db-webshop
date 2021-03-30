@@ -28,7 +28,7 @@ exports.userStart_get = async (req, res) => {
 exports.addProduct_get = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.userDB._id }).populate('productList');
-    res.render('addProduct.ejs', { products: user.productList, err: '' });
+    res.render('addProduct.ejs', { products: user.productList, err: '', user: req.user.userDB });
   } catch (err) {
     console.log(err);
   }
