@@ -15,8 +15,10 @@ exports.register_post = async (req, res) => {
   const userName = await User.findOne({ name: req.body.name });
 
   try {
-    if (req.body.email == '' || req.body.name == '' || req.body.password == '') {
-      return res.render('register.ejs', { message: 'Please fill in all the fields' });
+    if (req.body.email == '' || req.body.name == '' || req.body.password.length <= 2) {
+      return res.render('register.ejs', {
+        message: 'Please fill in all the fields, min password length 3',
+      });
     }
     if (userMail || userName) {
       res.render('register.ejs', { message: 'Email or Username already exists' });
